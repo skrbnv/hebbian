@@ -15,6 +15,7 @@ backprop:
 
 wandb:
   project:     Hebbian
+  name:        
 
 dataset:
   batch_size:  [16, 16]

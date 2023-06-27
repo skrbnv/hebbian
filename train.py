@@ -33,7 +33,12 @@ args = parser.parse_args()
 WANDB = args.wandb
 CONFIG = utils.load_yaml()
 if WANDB:
-    wprj = wandb.init(project=CONFIG.wandb.project, resume=False, config=CONFIG)
+    wprj = wandb.init(
+        project=CONFIG.wandb.project,
+        name=CONFIG.wandb.name,
+        resume=False,
+        config=CONFIG,
+    )
     RUN_ID = wprj.id
 else:
     RUN_ID = utils.get_random_hash()

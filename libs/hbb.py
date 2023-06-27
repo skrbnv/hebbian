@@ -53,6 +53,13 @@ class Linear(nn.Linear):
         self.hebbian_learning = False
         self.labels = None
 
+    def __repr__(self):
+        return self.__str__()
+
+    def __str__(self):
+        return f"""Hebbian Linear(in_features={self.in_features}, out_features={self.out_features},
+            bias={self.bias}, supervised={self.supervised})"""
+
 
 class Conv2d(nn.Conv2d):
     def __init__(
@@ -128,3 +135,10 @@ class Conv2d(nn.Conv2d):
     def disable_hebbian(self):
         self.hebbian_learning = False
         self.labels = None
+
+    def __repr__(self):
+        return self.__str__()
+
+    def __str__(self):
+        return f"""Hebbian Conv2d({self.in_channels}, {self.out_channels}, kernel_size={self.kernel_size},
+            padding={self.padding}, bias={self.bias}, supervised={self.supervised})"""
