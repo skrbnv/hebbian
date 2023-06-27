@@ -1,0 +1,6 @@
+/*.log
+/*.png
+__pycache__
+CIFAR10
+MNIST
+.vscode
